@@ -1,4 +1,6 @@
 # Slider
+***NOW IN KOTLIN***
+
 Android library for sliding views and fragments with default indicators and view transitions.
 
 Usage
@@ -13,7 +15,7 @@ dependencies {
 }
 ```
 
-minSdkVersion = '21'
+minSdkVersion = '19'
 
 Example
 -------
@@ -23,12 +25,11 @@ For views, use *ViewAdapter*.
 ```java
     @Override
     public View onCreateView(ViewGroup container) {
-        View view = createView(R.layout.item_view, container);
-        return view;
+        return new ItemView(getContext());
     }
 
     @Override
-    public void onBindView(ViewGroup container, int position) {
+    public void onBindView(ViewGroup container, final ItemView view, final Item item, int position)  {
         // bind your views here
     }
 ```
